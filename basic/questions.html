@@ -1,0 +1,39 @@
+<!-- Part 1: Basic version of questions.html in templates -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madlibs</title>
+</head>
+<body>
+    <h1>Madlibs</h1>
+    <form action="/story">
+        {% for prompt in prompts %}
+            <p>{{ prompt }}:
+                <input name="{{ prompt }}">
+            </p>
+            <!-- <label for="{{ prompt }}">{{ prompt }}:</label>
+            <input type="text" id="{{ prompt }}" name="{{ prompt }}" required><br> -->
+        {% endfor %}
+        <button type="submit">Generate Story</button>
+    </form>
+</body>
+</html>
+
+
+<!-- Part 2 - Further Study version -->
+
+<!-- {% extends "base.html" %}
+
+{% block content %}
+    <h2>Madlibs Story Generator</h2>
+    <form method="POST" action="/story">
+        {% for prompt in prompts %}
+            <label for="{{ prompt }}">{{ prompt }}:</label>
+            <input type="text" id="{{ prompt }}" name="{{ prompt }}" required><br>
+        {% endfor %}
+        <button type="submit">Generate Story</button>
+    </form>
+{% endblock %} -->
